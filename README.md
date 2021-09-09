@@ -1,2 +1,2 @@
-## RTR105
+### RTR105
 Datormācība (pamatkurss) elektroniskā klade
