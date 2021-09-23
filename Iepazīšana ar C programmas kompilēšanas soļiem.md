@@ -1,0 +1,21 @@
+Iepazīšana ar C programmas kompilēšanas soļiem 
+  - ```nano first_code.c``` - atver komandas redaktoru, first_code.c - komandas nosaukums
+  - ```int main(){return 0;}``` - komanda
+  - ```cat first_code.c``` - mēs var nolasīt komandu
+    - cat first_code.c
+    - int main()
+    - {
+    - return 0;
+    - }
+
+  - ```gcc``` - C programmas kompilēšana
+    - ```gcc -save-temps first_code.c```
+ - ```hexdump -C first_code.c``` - nolasīt koda 
+    - hexdump -C first_code.c
+    - 00000000  69 6e 74 20 6d 61 69 6e  28 29 0a 20 7b 0a 20 72  |int main(). {. r|
+    - 00000010  65 74 75 72 6e 20 30 3b  0a 20 7d 0a              |eturn 0;. }.|
+    - 0000001c
+ - ```./first.out``` - izpildit komandu first.out - komandas hosaukums, tai programmas izpildamais fails
+ - ```echo $?``` - pārbaudīt vai komanda ir izpildīta
+    - localhost:~# echo $?
+    - 0
