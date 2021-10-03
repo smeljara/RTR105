@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+ long long int x;
+ long long int y;
+ printf("ievadiet 1. skaitli\n");
+ scanf("%lld", &x);
+ printf("ievadiet 2. skaitli\n");
+ scanf("%lld", &y);
+ long long int result = x*y
+ 
+ printf("Rezultāts;\n%lld\n", result);
+ return 0;
+}
