@@ -1,0 +1,87 @@
+#include <stdio.h>
+
+int main ()
+{
+  int a, b, c, d;
+  printf ("Ievadiet trīs skaitļus (Ievades formāts - piem. 5 10 12)\n");
+  scanf ("%d %d %d", &a, &b, &c);
+  printf("Jāizvēlas skaitļu kārtošanas secība - dilstošā(1) vai augošā(2)\n");
+  printf ("Ievadiet ciparu 1 vai 2 \n");
+  scanf ("%d", &d);
+  if (d == 1)
+    {
+      if(a>c && a>b)
+      {
+          if(b>c)
+          {
+               printf("%d %d %d \n", a, b, c);
+          }
+          else
+          {
+              printf("%d %d %d \n", a, c, b);
+          }
+      }
+      if(b>a && b>c)
+      {
+          if(a>c)
+          {
+               printf("%d %d %d \n", b, a, c);
+          }
+          else
+          {
+              printf("%d %d %d \n", b, c, a);
+          }
+      }
+      if(c>b && c>a)
+      {
+          if(b>a)
+          {
+               printf("%d %d %d \n", c, b, a);
+          }
+          else
+          {
+              printf("%d %d %d \n", c, a, b);
+          }
+      }
+    }
+
+
+  if (d == 2)
+    {
+      if(a<c && a<b)
+      {
+          if(b<c)
+          {
+               printf("%d %d %d \n", a, b, c);
+          }
+          else
+          {
+              printf("%d %d %d \n", a, c, b);
+          }
+      }
+      if(b<a && b<c)
+      {
+          if(a<c)
+          {
+               printf("%d %d %d \n", b, a, c);
+          }
+          else
+          {
+              printf("%d %d %d \n", b, c, a);
+          }
+      }
+      if(c<b && c<a)
+      {
+          if(b<a)
+          {
+               printf("%d %d %d \n", c, b, a);
+          }
+          else
+          {
+              printf("%d %d %d \n", c, a, b);
+          }
+      }
+    }
+
+  return 0;
+}
