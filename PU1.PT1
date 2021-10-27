@@ -8,7 +8,7 @@ int main()
  scanf("%lld", &x);
  printf("ievadiet 2. skaitli\n");
  scanf("%lld", &y);
- long long int result = x*y
+ long long int result = x*y;
  
  printf("Rezultāts;\n%lld\n", result);
  return 0;
