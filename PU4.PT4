@@ -1,0 +1,106 @@
+#include <stdio.h>
+
+int main()
+{
+    int x, y;
+    
+    printf("Ievadiediet skaitli\n");
+    scanf("%d", &x);
+    printf("Izvelieties datu tips - char(1), int(2) vai long long(3) \n");
+    scanf("%d", &y);
+    
+    if(y == 1)
+    {
+        char  z = x, f;
+        char res = 1;
+        if(x>0)
+        {
+            while(x>0)
+            {
+                f = res;
+                res = x*res;
+                x=x-1;
+                if (f > res) break;
+            }
+            
+            if(f>res)
+            {
+                printf("Rezultātu nevar attelot, jo pārsniedz datu tipa robežas (Rezultāts>127)");
+            }
+            else
+            {
+                printf("Faktoriāls = %hhd", res);
+            }
+        }
+        else
+        {
+            printf("Faktoriāls = 1");
+        }
+    }
+    
+    if(y == 2)
+    {
+        int  z = x, f;
+        int res = 1;
+        if(x>0)
+        {
+            while(x>0)
+            {   
+                f = res;
+                res = x*res;
+                x=x-1;
+                if (f > res) break;
+                
+            }
+            
+            if(f>res)
+            {
+                printf("Rezultātu nevar attelot, jo pārsniedz datu tipa robežas (Rezultāts>2147483647)");
+            }
+            else
+            {
+                printf("Faktoriāls = %d", res);
+            }
+        }
+        else
+        {
+           printf("Faktoriāls = 1"); 
+        }
+    }
+    
+    if(y == 3)
+    {
+        long long  z = x, f;
+        long long res = 1;
+        if(x>0)
+        {
+            while(x>0)
+            {
+                f = res;
+                res = x*res;
+                x=x-1;
+                if (f > res) break;
+                
+                
+            }
+           
+            if(f>res)
+            {
+                printf("Rezultātu nevar attelot, jo pārsniedz datu tipa robežas (Rezultāts>9223372036854775807)");
+            }
+            else
+            {
+                printf("Faktoriāls = %lld", res);
+            }
+        }
+        else
+        {
+            printf("Faktoriāls = 1");
+        }
+    }
+    
+    
+    
+    printf("\n");
+    return 0;
+}
