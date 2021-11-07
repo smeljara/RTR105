@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+void function1();
+void function2(int x);
+int function3();
+int function4(int y, int z);
+
+    
+int main()
+{
+    int x, y;
+    printf("Funkcija bez argumentiem un bez return \n");
+    function1();
+    
+    printf("Funkcija ar argumentiem un bez return \n");
+    function2(10);
+    
+    printf("Funkcija bez argumentiem un ar return \n");
+    printf( "Return vērtība no f3 = %d\n", function3() );
+    
+    printf("Funkcija ar argumentiem un ar return \n");
+    y = function4(5, 10);
+    printf("Return vērtība no f4 = %d\n", y);
+    
+    
+    return 0;    
+}
+
+void function1()
+    {
+        printf("1. funkcija\n");
+    }
+
+void function2(int x)
+    {
+        printf("Vērtība = %d\n", x);  
+    }    
+
+int function3()
+    {
+        int x = 5;
+        return x;
+    }
+    
+int function4(int y, int z)
+    {
+        int result = y*z;
+        printf("Reizinašanas rezultāts = %d\n", result);
+        return result;
+    }
