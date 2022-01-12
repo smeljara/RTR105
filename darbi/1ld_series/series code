@@ -56,18 +56,18 @@ void my_exp (double x)
         }
     }
     printf("(1+%.2f)*e^(%.2f) caur summu: %.6Lf\n\n", x, x, S);
-    printf("                        500            \n");
-    printf("                       ______\n");
-    printf("                       \\                   k \n");
-    printf("                 x      \\        (1+x) * x  \n");
-    printf("          (1+x)*e     = >     __________________ \n");
-    printf("                        /\n");
-    printf("                       /_____          k! \n");
+    printf("               500            \n");
+    printf("              ______\n");
+    printf("              \\                    k \n");
+    printf("       x       \\          (1+x) * x  \n");
+    printf("(1+x)*e      = >       __________________ \n");
+    printf("               /\n");
+    printf("              /_____          k! \n");
     printf("\n");
     printf("\n");
     printf("\n");
-    printf("                                    x \n");
-    printf("        rekurences reizinatajs:   _____  \n");
+    printf("                            x \n");
+    printf("rekurences reizinatajs:   _____  \n");
     printf("\n");
-    printf("                                    k   \n");
+    printf("                            k   \n");
 }
