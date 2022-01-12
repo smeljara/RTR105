@@ -1,0 +1,26 @@
+funkcija y(x) = (1+x)*e^x
+ievadiet x vertibu: 4
+
+Funkcijas vērtība izmantojot funkcijas izteiksmi:
+(1+4.00)*e^4.00 = 272.990750
+
+a0 = 5.00		|| S0 = 5.00
+a499 = 5.4887*10^-831	|| S499 = 272.9907501657
+a500 = 4.3909*10^-833	|| S500 = 272.9907501657
+
+(1+4.00)*e^(4.00) caur summu: 272.990750
+
+                        500            
+                       ______
+                       \                   k 
+                 x      \        (1+x) * x  
+          (1+x)*e     = >     __________________ 
+                        /
+                       /_____          k! 
+
+
+
+                                    x 
+        rekurences reizinatajs:   _____  
+
+                                    k   
