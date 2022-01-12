@@ -1,0 +1,13 @@
+Funkcija (1+x)*e^x
+Ievadi kreisas robēžas vērtību 'a'
+0
+Ievadi labas robežas vērtību 'b'
+3
+Ievadi 'c' vērtību
+2
+Ievadi precizitātes vērtību 
+0.001
+
+x=0.374268
+Aprēķināta f(0.374268) = (1+0.374268)*e^0.374268 = 1.998084
+Iterācijas skaits = 12
