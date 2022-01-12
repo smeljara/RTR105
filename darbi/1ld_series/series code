@@ -1,1 +1,73 @@
+#include<stdio.h>
+#include<math.h>
+void my_exp (double x);
 
+void main ()
+{
+    double x, y ,yy;
+    printf("funkcija y(x) = (1+x)*e^x\n");
+    printf("ievadiet x vertibu: ");
+    scanf("%lf", &x);
+
+    y = (1+x)*exp(x);
+    printf("\nFunkcijas vērtība izmantojot funkcijas izteiksmi:\n(1+%.2f)*e^%.2f = %.6f\n\n", x, x, y);
+    
+    my_exp(x);
+}
+
+
+void my_exp (double x)
+{
+    long double a, S, a499, a500;
+    int k=0;
+    int count = 0;
+    
+    a = ((1+x)*pow(x,0))/(1.);
+    S = a;
+    printf("a0 = %.2Lf\t\t|| S0 = %.2Lf\n", a, S);
+    
+    while(k<500)
+    {   
+        k++;
+        a = a*x/k;
+        S = S + a;
+        if(k==499)
+        {
+            a499 = a;
+            while(a499<1)
+            {
+                a499 *= 10;
+                count++;
+            }
+            printf("a499 = %.4Lf*10^-%d\t|| S499 = %.10Lf\n", a499, count, S);
+            count = 0;
+            
+        } 
+        if(k==500)
+        {   
+            a500 = a;
+            while(a500<1)
+            {
+                a500 *= 10;
+                count++;
+            }
+
+            printf("a500 = %.4Lf*10^-%d\t|| S500 = %.10Lf\n\n", a500, count, S);
+        }
+    }
+    printf("(1+%.2f)*e^(%.2f) caur summu: %.6Lf\n\n", x, x, S);
+    printf("                        500            \n");
+    printf("                       ______\n");
+    printf("                       \\                   k \n");
+    printf("                 x      \\        (1+x) * x  \n");
+    printf("          (1+x)*e     = >     __________________ \n");
+    printf("                        /\n");
+    printf("                       /_____          k! \n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    printf("                                    x \n");
+    printf("        rekurences reizinatajs:   _____  \n");
+    printf("\n");
+    printf("                                    k   \n");
+}
