@@ -1,1 +1,43 @@
+#include<stdio.h>
+#include<math.h>
 
+int main ()
+{
+	float a, b, c, x, funkca, funkcb, funckx, delta_x, result;
+	int k=0;
+
+	printf("Funkcija (1+x)*e^x\n");
+	printf("Ievadi kreisas robēžas vērtību 'a'\n");
+	scanf("%f", &a);
+	printf("Ievadi labas robežas vērtību 'b'\n");
+	scanf("%f", &b);
+	printf("Ievadi c vērtību\n");
+	scanf("%f", &c);
+	printf("Ievadi precizitātes vērtību \n");
+	scanf("%f", &delta_x);
+
+	funkca = (1+a)*exp(a);
+	funkcb = (1+b)*exp(b);
+
+	if(funkca<=c && funkcb>=c)
+	{
+		while((b-a)>delta_x)
+		{
+			k++;
+			x = (b+a)/2;
+			if(((1+x)*exp(x))<c) a=x;
+			else b=x;
+		}
+	}
+	else 
+	{
+	printf("Nepareizi ievaditas robežas, vai funkcija atlasītajā intervālā ir dilstoša.\n");
+	return 1;	
+	}
+
+	printf("\nx=%f\n", x);
+    result = (1+x)*exp(x);
+    printf("Aprēķināta f(%f) = (1+%f)*e^%f = %f\n",x, x, x, result);
+    printf("Iterācijas skaits = %d\n", k);
+	return 0;
+}
