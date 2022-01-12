@@ -31,7 +31,7 @@ int main ()
 	}
 	else 
 	{
-	printf("Nepareizi ievaditas robežas, vai funkcija atlasītajā intervālā ir dilstoša.\n");
+	printf("Nepareizi ievaditas robežas, vai funkcija atlasītajā intervālā ir dilstoša, vai ievadīta funkcijas vērtība 'c' atrodas aiz ievadīta intervālā.\n");
 	return 1;	
 	}
 
