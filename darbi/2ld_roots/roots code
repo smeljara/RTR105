@@ -11,7 +11,7 @@ int main ()
 	scanf("%f", &a);
 	printf("Ievadi labas robežas vērtību 'b'\n");
 	scanf("%f", &b);
-	printf("Ievadi c vērtību\n");
+	printf("Ievadi 'c' vērtību\n");
 	scanf("%f", &c);
 	printf("Ievadi precizitātes vērtību \n");
 	scanf("%f", &delta_x);
