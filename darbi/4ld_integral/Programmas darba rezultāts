@@ -1,0 +1,10 @@
+Ievadi 'a' vērtību:
+0
+Ievadi 'b' vērtību:
+2
+Ievadi precizitātes vērtību:
+0.001
+
+Integralā vērtība (aprēķins izmantojot taisnstūru metodi) : 14.77783
+Integralā vērtība (aprēķins izmantojot trapeces metodi)   : 14.77825
+Integralā vērtība (aprēķins izmantojot simpsona metodi)   : 14.77817
