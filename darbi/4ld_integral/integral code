@@ -1,0 +1,92 @@
+#include<stdio.h>
+#include<math.h>
+
+double simpson_integral(double a, double b, int n);
+
+void main()
+{	
+	double a, b, eps, h, integ1 = 0, integ2, integ3, integ4, x1, x2, I1, I2;
+	int k, n=2;
+
+	printf("Ievadi 'a' vērtību:\n");
+	scanf("%lf", &a);
+	printf("Ievadi 'b' vērtību:\n");
+	scanf("%lf", &b);
+	printf("Ievadi precizitātes vērtību:\n");
+	scanf("%lf", &eps);
+
+    //rectangle method
+	integ2 = (b-a)*((1+a)*exp(a)+(1+b)*exp(b))/n;
+	while(fabs(integ2-integ1)>eps)
+	{
+		n*=2;
+		h=(b-a)/n;
+		integ1=integ2;
+		integ2=0.;
+		for(k=0;k<n;k++)
+		{
+			integ2 += h*(1+a+(k+0.5)*h)*exp(a+(k+0.5)*h);
+		}
+	}
+    
+    //trapezoidal method
+    n=2;
+	integ1 = 0;
+	h=(b-a)/n;
+	integ3 = ((b-a)*((1+a)*exp(a))+((1+a)*exp(a))/2);
+	while(fabs(integ3-integ1)>eps)
+	{
+		n*=2;
+		h=(b-a)/n;
+		integ1=integ3;
+		integ3=0.;
+		for (k = 0; k < n; k++)	
+		{
+			x1 = a+(k*h);
+			x2 = a+(k+1)*h;
+			integ3 += h*0.5*(((1+x1)*exp(x1)+(1+x2)*exp(x2)));
+		}
+	}
+
+    //simpson method
+	n=2;
+	I1 = simpson_integral(a,b,n);
+	n *= 2;
+	I2 = simpson_integral(a,b,n);
+	while(fabs(I1-I2)>eps)
+	{
+		n *= 2;
+		I1 = I2;
+		I2 = 0;
+		I2 = simpson_integral(a,b,n);
+	}
+
+  printf("\n");
+	printf("Integralā vērtība (aprēķins izmantojot taisnstūru metodi) : %.5lf\n", integ2);
+	printf("Integralā vērtība (aprēķins izmantojot trapeces metodi)   : %.5lf\n", integ3);
+	printf("Integralā vērtība (aprēķins izmantojot simpsona metodi)   : %.5lf\n", I2);
+
+}
+
+double simpson_integral(double a, double b, int n)
+{
+	double integ=0, integ1=0, integ2=0, x=0, h=0, h2=0;
+	int i=0,k=0;
+	
+	h=(b-a)/n;
+	h2=h*2;
+	k=n/2;
+	x=h;
+
+	integ = (1+a)*exp(a) + (1+b)*exp(b);
+	for(i=0;i<k-1;i++,x+=2*h)
+	{
+		integ1 += (1+x)*exp(x);
+		integ2 += (1+x+h)*exp(x+h);
+	}
+
+	integ1 += (1+x)*exp(x);
+	integ = (h/3)*(integ+4*integ1+2*integ2);
+
+	return integ;
+}
