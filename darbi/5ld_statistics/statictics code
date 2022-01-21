@@ -135,7 +135,7 @@ void mode (char txtc[], int g)
         printf("%c-%d; ", sim[i], count[i]);
     }
     printf("\n");
-    printf("Moda - %c : skaits %d  (Gadījumā, ja pastāv citi simboli ar tādu pašu atkārtošanās skaitu - rāda pēdēju)\n", b1, b0);
+    printf("Moda ir simbols - %c : atkartošanas skaits - %d  (Gadījumā, ja pastāv citi simboli ar tādu pašu atkārtošanās skaitu - rāda pēdēju)\n", b1, b0);
     printf("\n");
 }
 
