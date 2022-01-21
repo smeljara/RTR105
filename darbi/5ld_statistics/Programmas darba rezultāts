@@ -1,0 +1,23 @@
+Ievadi simbolus vai tekstu.
+dh123 123 14/. ,34 234,.
+Jūsu simbolu rinda:
+dh123 123 14/. ,34 234,.
+
+Sakārtots augošā secībā: 
+    ,,../1112223333444dh
+
+Sakārtots augošā secībā bez punktuācijas un atstarpes: 
+1112223333444dh
+
+Mediana ir simbols - 3 | 8 - pēc kārtas
+
+1-3; 2-3; 3-4; 4-3; d-1; h-1; 
+Moda ir simbols - 3 : atkartošanas skaits 4  (Gadījumā, ja pastāv citi simboli ar tādu pašu atkārtošanās skaitu - rāda pēdēju)
+
+Minimala vērtība = 49, apzimejums = 1
+Maksimala vērtība  = 104, apzimejums = h
+
+Videja vērtība = 57.40
+
+Cipari: 1 1 1 2 2 2 3 3 3 3 4 4 4 
+Burti: d h 
