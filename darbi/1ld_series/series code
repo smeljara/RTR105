@@ -2,7 +2,7 @@
 #include<math.h>
 void my_exp (double x);
 
-void main ()
+int main ()
 {
     double x, y ,yy;
     printf("funkcija y(x) = (1+x)*e^x\n");
@@ -13,6 +13,8 @@ void main ()
     printf("\nFunkcijas vērtība izmantojot funkcijas izteiksmi:\n(1+%.2f)*e^%.2f = %.6f\n\n", x, x, y);
     
     my_exp(x);
+    
+    return 0;
 }
 
 
@@ -70,4 +72,5 @@ void my_exp (double x)
     printf("rekurences reizinatajs:   _____  \n");
     printf("\n");
     printf("                            k   \n");
+    
 }
