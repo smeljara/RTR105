@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<math.h>
+#define N 250
+
+int main( )
+{
+	double y[N], y_prim[N], y_prim2[N], y_prim_f[N], y_prim2_f[N];
+	double a, b, x, delta_x;
+	int i, count = 0;
+
+	printf("Ievadi 'a' vērtību\n");
+	scanf("%lf", &a);
+	printf("Ievadi 'b' vērtību\n");
+	scanf("%lf", &b);
+	printf("Ievadi 'delta_x' vērtību\n");
+	scanf("%lf", &delta_x);
+	printf("\n");
+
+	//f(x) vertibas
+	x=a;
+	for(i=0; x<=b+delta_x; i++)
+	{
+		y[i] = (1+x)*exp(x);
+		x += delta_x;
+		count++;
+	}
+
+	//f'(x)	diferencēšana un priekšu
+	x=a;
+	for(i=0; i<=count; i++)
+	{
+		y_prim[i] = (y[i+1]-y[i])/delta_x;
+		x += delta_x;
+	}
+
+	//f'(x) formula
+	x=a;
+	for(i=0; i<=count; i++)
+	{
+		y_prim_f[i] = (2*exp(x))+(x*exp(x));
+		x += delta_x;
+	}
+
+	//f"(x) diferencēšana
+	x=a;
+	for(i=0; i<=count; i++)
+	{
+		y_prim2[i] = (y[i-1]-2*y[i]+y[i+1])/(delta_x*delta_x);
+		x += delta_x;
+	}
+
+	//f"(x) formula
+	x=a;
+	for(i=0; i<=count; i++)
+	{
+		y_prim2_f[i] = (3*exp(x))+(x*exp(x));
+		x += delta_x;
+	}
+
+
+	printf("x\tf(x)\tf'(x)\tf'(x)\tf''(x)\tf''(x)\n");
+	printf(" \t    \t     \tform.\t      \tform.\n");
+	printf("\n");
+	
+	x=a;
+	for (i=0; i<=count; i++)
+	{
+	    if(i==0)
+	    printf("%.2lf\t%.2lf\t%.2lf\t%.2lf\t     \t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i],  y_prim2_f[i]);
+	    if((i<=count-2) && (i != 0))
+	    printf("%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i], y_prim2[i], y_prim2_f[i]);
+	    if(i==count-1)
+	    printf("%.2lf\t%.2lf\t     \t%.2lf\t     \t%.2lf\n", x, y[i], y_prim_f[i], y_prim2_f[i]);
+	    x += delta_x;
+	}
+
+    FILE *file;
+    file = fopen("derivative.dat", "w");
+
+	fprintf(file, "x\tf(x)\tf'(x)\tf'(x)\tf''(x)\tf''(x)\n");
+	fprintf(file, " \t    \t     \tform.\t      \tform.\n");
+	fprintf(file,"\n");
+
+	for (i=0; i<=count; i++)
+	{
+		if(i==0)
+		fprintf(file, "%.2lf\t%.2lf\t%.2lf\t%.2lf\t     \t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i],  y_prim2_f[i]);
+		if((i<=count-2) && (i != 0))
+		fprintf(file, "%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i], y_prim2[i], y_prim2_f[i]);
+		if(i==count-1)
+		fprintf(file, "%.2lf\t%.2lf\t     \t%.2lf\t     \t%.2lf\n", x, y[i], y_prim_f[i], y_prim2_f[i]);
+		x += delta_x;
+	}
+
+	fclose(file);
+
+    return 0;
+}
