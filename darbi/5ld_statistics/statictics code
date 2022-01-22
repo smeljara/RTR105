@@ -36,6 +36,8 @@ int main()
     printf("Maksimala vērtība  = %d, apzimejums = %c\n\n", txtc[g-1], txtc[g-1]);
     arithmetic_mean(txtc, g);
     simb(txtc, g);
+    
+    return 0;
 }
 
 void sort(char txt[], int n)
