@@ -3,7 +3,7 @@
 
 double simpson_integral(double a, double b, int n);
 
-void main()
+int main()
 {	
 	double a, b, eps, h, integ1 = 0, integ2, integ3, integ4, x1, x2, I1, I2;
 	int k, n=2;
@@ -65,6 +65,8 @@ void main()
 	printf("Integralā vērtība (aprēķins izmantojot taisnstūru metodi) : %.5lf\n", integ2);
 	printf("Integralā vērtība (aprēķins izmantojot trapeces metodi)   : %.5lf\n", integ3);
 	printf("Integralā vērtība (aprēķins izmantojot simpsona metodi)   : %.5lf\n", I2);
+	
+	return 0;
 
 }
 
