@@ -16,7 +16,7 @@ int main()
 	scanf("%lf", &eps);
 
     //rectangle method
-	integ2 = (b-a)*((1+a)*exp(a)+(1+b)*exp(b))/n;
+	integ2 = ((b-a)*((1+a)*exp(a)+(1+b)*exp(b))/n)+eps;
 	while(fabs(integ2-integ1)>eps)
 	{
 		n*=2;
@@ -33,7 +33,7 @@ int main()
     n=2;
 	integ1 = 0;
 	h=(b-a)/n;
-	integ3 = ((b-a)*((1+a)*exp(a))+((1+a)*exp(a))/2);
+	integ3 = ((b-a)*((1+a)*exp(a))+((1+a)*exp(a))/2)+eps;
 	while(fabs(integ3-integ1)>eps)
 	{
 		n*=2;
