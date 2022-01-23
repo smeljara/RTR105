@@ -13,7 +13,7 @@ int main()
 {   
     int n, g, f=0;
     float m;
-    char txt[50], txtc[100]={0};
+    char txt[100], txtc[100]={0};
     printf("Ievadi simbolus vai tekstu.\n");
     fgets(txt, sizeof(txt), stdin);
     printf("Jūsu simbolu rinda:\n");
