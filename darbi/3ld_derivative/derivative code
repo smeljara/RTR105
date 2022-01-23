@@ -77,8 +77,8 @@ int main( )
     FILE *file;
     file = fopen("derivative.dat", "w");
 	
-	fprintf(file, "x\tf(x)\tf'(x)\tf'(x)\tf''(x)\tf''(x)\n");
-	fprintf(file, " \t    \t     \tform.\t      \tform.\n");
+	fprintf(file, "#x\tf(x)\tf'(x)\tf'(x)\tf''(x)\tf''(x)\n");
+	fprintf(file, "# \t    \t     \tform.\t      \tform.\n");
 	fprintf(file,"\n");
 	
 	x=a;
