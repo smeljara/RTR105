@@ -66,30 +66,30 @@ int main( )
 	for (i=0; i<=count; i++)
 	{
 	    if(i==0)
-	    printf("%.2lf\t%.2lf\t%.2lf\t%.2lf\t     \t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i],  y_prim2_f[i]);
+	    printf("%.2lf\t%.2lf\t%.2lf\t%.2lf\t-    \t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i],  y_prim2_f[i]);
 	    if((i<=count-2) && (i != 0))
 	    printf("%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i], y_prim2[i], y_prim2_f[i]);
 	    if(i==count-1)
-	    printf("%.2lf\t%.2lf\t     \t%.2lf\t     \t%.2lf\n", x, y[i], y_prim_f[i], y_prim2_f[i]);
+	    printf("%.2lf\t%.2lf\t-    \t%.2lf\t-    \t%.2lf\n", x, y[i], y_prim_f[i], y_prim2_f[i]);
 	    x += delta_x;
 	}
 
     FILE *file;
     file = fopen("derivative.dat", "w");
-	
+
 	fprintf(file, "#x\tf(x)\tf'(x)\tf'(x)\tf''(x)\tf''(x)\n");
 	fprintf(file, "# \t    \t     \tform.\t      \tform.\n");
 	fprintf(file,"\n");
-	
-	x=a;
+    
+    x = a;
 	for (i=0; i<=count; i++)
 	{
 		if(i==0)
-		fprintf(file, "%.2lf\t%.2lf\t%.2lf\t%.2lf\t     \t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i],  y_prim2_f[i]);
+		fprintf(file, "%.2lf\t%.2lf\t%.2lf\t%.2lf\t-    \t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i],  y_prim2_f[i]);
 		if((i<=count-2) && (i != 0))
 		fprintf(file, "%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\n", x, y[i], y_prim[i], y_prim_f[i], y_prim2[i], y_prim2_f[i]);
 		if(i==count-1)
-		fprintf(file, "%.2lf\t%.2lf\t     \t%.2lf\t     \t%.2lf\n", x, y[i], y_prim_f[i], y_prim2_f[i]);
+		fprintf(file, "%.2lf\t%.2lf\t-    \t%.2lf\t-    \t%.2lf\n", x, y[i], y_prim_f[i], y_prim2_f[i]);
 		x += delta_x;
 	}
 
